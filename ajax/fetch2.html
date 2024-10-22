@@ -29,6 +29,29 @@
     </form>
     <div id="resultado"></div>
     <script>
-        // ...
+        document.usuarioForm.onsubmit = async e => {
+            e.preventDefault()
+    
+            const form = e.target
+            const data = new FormData(form)
+            data.append('ajax', true)
+    
+            const options = {
+                method: form.method,
+                body: new URLSearchParams(data)
+            }
+    
+            try {
+                const resp = await fetch(form.action, options)
+                if (!resp.ok) throw new Error('Erro na rede')
+                const json = await resp.json()
+                const resultado = document.getElementById('resultado')
+                resultado.innerHTML = JSON.stringify(json)
+            } catch (error) {
+                console.error('Erro:', error)
+                document.getElementById('resultado').innerHTML = 'Ocorreu um erro ao enviar o formulário.'
+            }
+        }
     </script>
+    
 </body>

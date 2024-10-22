@@ -29,4 +29,11 @@ app.use(bodyParser.json)
         })
     })
 
+    app.post('/formulario', (req,res) => {
+        res.send({
+            ...req.body,
+            id:1
+        })
+    })
+
 app.listen(8080, () => console.log('Executando'))
