@@ -9,4 +9,6 @@ define('SITE_DESCRICAO', 'Site em PHP - Arturzinho');
 define('URL_PRODUCAO', 'http://artur.com.br');
 define('URL_DESENVOLVIMENTO', 'http://localhost/blog');
 
+define('URL_SITE', 'php/blog/');
+
 // const SITE_NOME2 = 'Site do Artur';

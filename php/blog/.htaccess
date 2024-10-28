@@ -1,0 +1,13 @@
+php_flag display_errors On
+php_value error_reporting E_ALL
+
+
+Options -indexes
+
+RewriteEngine On
+RewriteBase /blog
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-l
+
+RewriteRule ^(.*)$ index.php/$1
