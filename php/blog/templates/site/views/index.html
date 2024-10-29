@@ -2,8 +2,21 @@
 {% block conteudo %}
 
 <div class="container my-5">
-    <h1>Index</h1>
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <img src="/php/blog/templates/site/assets/img/channels4_profile.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="{{url('post/'~post.id)}}">
+                        <h5 class="card-title">{{ post.titulo }}</h5>
+                        <p class="card-text">{{ resumirTexto(post.texto,150) }}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-
 
 {% endblock %}

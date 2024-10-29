@@ -1,0 +1,23 @@
+{
+    "name": "cooperja/php",
+    "description": "Curso PHP",
+    "autoload": {
+        "psr-4": {
+            "sistema\\": "sistema/"
+        },
+        "files": [
+            "sistema/configuracao.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Artur Machado"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.0",
+        "pecee/simple-router": "dev-master",
+        "twig/twig": "^3.0"
+    }
+}
