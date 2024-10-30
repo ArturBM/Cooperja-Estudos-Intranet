@@ -8,6 +8,18 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="http://localhost:3000/php/blog/" class="nav-link px-2 text-white">Home</a></li>
+          <div class="dropdown">
+            <button class="btn bg-dark text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorias
+            </button>
+            <ul class="dropdown-menu">
+              {% for categoria in categorias %}
+              <li>
+                <a class="dropdown-item" href="#">{{categoria.titulo}}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
           <li><a href="http://localhost:3000/php/blog/sobre-nos" class="nav-link px-2 text-white">Sobre</a></li>
         </ul>
 

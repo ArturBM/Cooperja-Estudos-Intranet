@@ -31,8 +31,9 @@ class Conexao
 
             }
 
-            return self::$instancia;
+            
         }
+        return self::$instancia;
     }
 
     protected function __construct()

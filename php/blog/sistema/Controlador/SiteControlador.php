@@ -5,6 +5,8 @@ namespace sistema\Controlador;
 use sistema\Nucleo\Controlador;
 use Twig\Template;
 use sistema\Modelo\PostModelo;
+use sistema\Nucleo\Helpers;
+use sistema\Modelo\CategoriaModelo;
 
 class SiteControlador extends Controlador
 {
@@ -15,16 +17,33 @@ class SiteControlador extends Controlador
 
     public function index():void
     {
-        $posts = (new PostModelo())->ler();
+        $posts = (new PostModelo())->busca();
 
         echo $this->template->renderizar('index.html',[
-            'posts' => $posts
+            'posts' => $posts,
+            'categorias' => $this->categorias(),
         ]);
     }
 
     public function post(int $id):void
     {
-        echo $id;
+        $post = (new PostModelo())->buscaPorId($id);
+        if(!$post){
+            Helpers::redirecionar('404');
+        }
+
+        echo $this->template->renderizar('post.html',[
+            'post'=> $post,
+            'categorias' => $this->categorias(),
+        ]);
+        
+    }
+
+    public function categorias()
+    {
+     
+        return (new CategoriaModelo())->busca();
+        
     }
 
     public function sobre():void

@@ -3,19 +3,27 @@
 
 <div class="container my-5">
     <div class="row">
-        {% for post in posts %}
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <img src="/php/blog/templates/site/assets/img/channels4_profile.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <a href="{{url('post/'~post.id)}}">
-                        <h5 class="card-title">{{ post.titulo }}</h5>
-                        <p class="card-text">{{ resumirTexto(post.texto,150) }}</p>
-                    </a>
+        <div class="col-lg-9"> 
+            <div class="row">
+                {% for post in posts %}
+                <div class="col-md-4 mb-4"> 
+                    <div class="card">
+                        <img src="/php/blog/templates/site/assets/img/channels4_profile.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a href="{{ url('post/' ~ post.id) }}" style="text-decoration: none;">
+                                <h5 class="card-title text-dark">{{ post.titulo }}</h5>
+                                <p class="card-text text-dark">{{ resumirTexto(post.texto, 150) }}</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
-        {% endfor %}
+
+        <div class="col-lg-3 bx-sidebar"> 
+            {% include 'sidebar.html' %}
+        </div>
     </div>
 </div>
 

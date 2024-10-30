@@ -12,7 +12,7 @@ define('DB_SENHA', '');
 define('SITE_NOME', 'Site do Artur');
 define('SITE_DESCRICAO', 'Site em PHP - Arturzinho');
 
-define('URL_PRODUCAO', 'http://localhost/php/blog');
+define('URL_PRODUCAO', 'http://localhost:3000/php/blog');
 define('URL_DESENVOLVIMENTO', 'http://localhost:3000/php/blog');
 
 define('URL_SITE', 'php/blog/');

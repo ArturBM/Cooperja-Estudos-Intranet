@@ -3,13 +3,13 @@
 namespace sistema\Modelo;
 use sistema\Nucleo\Conexao;
 
-class PostModelo
+class CategoriaModelo
 {
 
 public function busca():array
 {
 
-    $query = "SELECT * FROM posts";
+    $query = "SELECT * FROM categorias";
     $stmt = Conexao::getInstancia()->query($query);
     $resultado = $stmt->fetchAll();
 
@@ -18,7 +18,7 @@ public function busca():array
 
 public function buscaPorId(int $id):bool | object
 {
-    $query = "SELECT * FROM posts WHERE id = {$id}";
+    $query = "SELECT * FROM categorias WHERE id = {$id}";
     $stmt = Conexao::getInstancia()->query($query);
     $resultado = $stmt->fetch();
 
