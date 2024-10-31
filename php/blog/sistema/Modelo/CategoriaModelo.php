@@ -25,4 +25,14 @@ public function buscaPorId(int $id):bool | object
     return $resultado;
 }
 
+public function posts(int $id):array
+{
+
+    $query = "SELECT * FROM posts WHERE categoria_id={$id} ORDER BY id Desc";
+    $stmt = Conexao::getInstancia()->query($query);
+    $resultado = $stmt->fetchAll();
+
+    return $resultado;
+}
+
 }
