@@ -1,0 +1,111 @@
+/* Reset básico para remover margens e preenchimentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo da sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    height: 100vh; /* Altura total da viewport */
+    position: fixed; /* Fixa a sidebar na tela */
+}
+
+.sidebarLogo {
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: black;
+}
+.sidebarLogo a{
+    text-decoration: none;
+    color: black;
+}
+
+.sidebarLogo img {
+    width: 80%; /* Ajuste o tamanho da imagem */
+    border-radius: 50%; /* Para deixar a imagem redonda */
+}
+
+/* Menu da sidebar */
+.sidebarMenu {
+    margin-top: 20px;
+}
+
+.sidebarMenu ul {
+    list-style: none;
+}
+
+.sidebarMenu li {
+    margin: 10px 0;
+}
+
+.sidebarMenu a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.sidebarMenu a:hover {
+    color: #007bff; /* Cor ao passar o mouse */
+}
+
+/* Estilo do conteúdo principal */
+.flex-fill {
+    margin-left: 250px; /* Espaço para a sidebar */
+    padding: 20px;
+}
+
+/* Estilo dos cartões */
+.card {
+    border: none; /* Remove borda padrão */
+}
+
+.card-header {
+    background-color: #e9ecef; /* Cor de fundo do cabeçalho do cartão */
+}
+
+
+/* Estilo do rodapé */
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h2 {
+    font-size: 1.5rem;
+}
+
+.btn-group .dropdown-toggle {
+    border: none; /* Remove borda do botão */
+}

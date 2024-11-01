@@ -16,5 +16,6 @@ define('URL_PRODUCAO', 'http://localhost:3000/php/blog');
 define('URL_DESENVOLVIMENTO', 'http://localhost:3000/php/blog');
 
 define('URL_SITE', 'php/blog/');
+define('URL_ADMIN', 'php/blog/admin/');
 
 // const SITE_NOME2 = 'Site do Artur';

@@ -1,0 +1,36 @@
+{% extends "dashboard.html" %}
+
+{% block conteudo %}
+<div class="card border-0 shadow-sm mt-3">
+    <div class="card-header bg-white border-0">
+      <a href="{{url('admin/categorias/cadastrar')}}" class="btn btn-primary">Cadastrar</a>
+    </div>
+    <div class="card-body">
+        <div class="table-resposive">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for categoria in categorias %}
+                  <tr>
+                    <th> {{categoria.id}}</th>
+                    <td> {{categoria.titulo}}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+        </div>
+   
+       
+       
+    </div>
+</div>
+{% endblock %}

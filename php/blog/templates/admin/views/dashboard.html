@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block corpo %} 
+<div class="d-flex">
+    {% include 'menu.html' %}
+    <div class="flex-fill">
+        {% include 'topo.html' %} <!-- Certifique-se de que este arquivo existe -->
+        <main class="container">
+            {% block conteudo %}
+            <div class="card border-0 shadow-sm mt-3">
+                <div class="card-header bg-white border-0">
+                    <h5 class="card-title">Dashboard</h5>
+                </div>
+                <div class="card-body">
+                    <p>Conteúdo em desenvolvimento</p>
+                </div>
+            </div>
+            {% endblock %}
+        </main>
+        {% include 'rodape.html' %}
+    </div>
+</div>
+{% endblock %}

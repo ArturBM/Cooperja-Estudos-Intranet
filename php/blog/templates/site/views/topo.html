@@ -23,8 +23,9 @@
           <li><a href="http://localhost:3000/php/blog/sobre-nos" class="nav-link px-2 text-white">Sobre</a></li>
         </ul>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+        <form action="{{ url('buscar') }}" method="post" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" name="busca" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+          <input type="submit">
         </form>
 
         <div class="text-end">

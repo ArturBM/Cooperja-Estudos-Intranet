@@ -35,4 +35,12 @@ public function posts(int $id):array
     return $resultado;
 }
 
+public function armazenar(array $dados): void
+{
+    $query = "INSERT INTO categorias (titulo, texto, status) VALUES (?, ?, ?);";
+    $stmt = Conexao::getInstancia()->prepare($query);
+    $stmt->execute([$dados['titulo'], $dados['texto'], $dados['status']]);
+}
+
+
 }

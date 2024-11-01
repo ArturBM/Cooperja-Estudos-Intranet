@@ -1,0 +1,27 @@
+<div class="sidebar bg-primary">
+    <div class="sidebarLogo text-center">
+        <a href="/php/blog/templates/admin/dashboard" title="Página Inicial">
+            <img src="../assets/img/channels4_profile.jpg" alt="{{ constant('SITE_NOME') }}" class="img-fluid">
+        </a>
+    </div>
+    <div class="sidebarMenu">
+        <ul class="list-unstyled">
+            <li class="sidebarTitulo">Administração</li>
+            <li>
+                <a href="{{url('admin/posts/listar')}}" title="Administração de Posts">
+                    <i class="fa-solid fa-file-pen"></i> Posts
+                </a>
+            </li>
+            <li>
+                <a href="{{url('admin/categorias/listar')}}" title="Administração de Categorias">
+                    <i class="fa-solid fa-folder"></i> Categorias
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Administração de Usuários">
+                    <i class="fa-solid fa-users"></i> Usuários
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
