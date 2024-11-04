@@ -3,7 +3,10 @@
 {% block conteudo %}
 <div class="card border-0 shadow-sm mt-3">
     <div class="card-header bg-white border-0">
+      Total de categorias {{total.total}} - ativos {{total.ativo}} -inativos {{total.inativo}}
+      <div class="text-end">
       <a href="{{url('admin/categorias/cadastrar')}}" class="btn btn-primary">Cadastrar</a>
+    </div>
     </div>
     <div class="card-body">
         <div class="table-resposive">
@@ -28,6 +31,8 @@
                       {%endif%}</td>
                     <td>  
                       <a href="{{url('admin/categorias/editar/'~categoria.id)}}">Editar</a>
+
+                      <a href="{{url('admin/categorias/deletar/'~categoria.id)}}">Deletar</a>
                     </td>
                   </tr>
                   {%endfor%}

@@ -10,8 +10,14 @@ class AdminCategorias extends AdminControlador
 
     public function listar():void
     {
+        $categoria = new CategoriaModelo();
         echo $this->template->renderizar('categorias/listar.html',[
             'categorias'=> (new CategoriaModelo())->busca(),
+            'total'=> [
+                'total'=> $categoria->total(),
+                'ativo'=>$categoria->total('status = 1'),
+                'inativo'=> $categoria->total('status = 0')
+            ]
         ]);
     }
 
@@ -40,6 +46,12 @@ class AdminCategorias extends AdminControlador
         echo $this->template->renderizar('categorias/formulario.html',[
             'categoria' => $categoria
         ]);
+    }
+
+    public function deletar(int $id):void
+    {
+        (new CategoriaModelo())->deletar($id);
+        Helpers::redirecionar('admin/categorias/listar');
     }
 
 

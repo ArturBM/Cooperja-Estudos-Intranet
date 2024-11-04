@@ -24,6 +24,8 @@ SimpleRouter::group(['namespace' => 'Admin'], function () {
     'AdminPosts@cadastrar');
     SimpleRouter::match(['get','post'], URL_ADMIN.'posts/editar/{id}',
     'AdminPosts@editar');
+    SimpleRouter::get(URL_ADMIN.'posts/deletar/{id}',
+    'AdminPosts@deletar');
 
     // ADMIN CATEGORIAS
     SimpleRouter::get(URL_ADMIN.'categorias/listar', 'AdminCategorias@listar');
@@ -31,6 +33,8 @@ SimpleRouter::group(['namespace' => 'Admin'], function () {
      'AdminCategorias@cadastrar');
      SimpleRouter::match(['get','post'], URL_ADMIN.'categorias/editar/{id}',
      'AdminCategorias@editar');
+     SimpleRouter::get(URL_ADMIN.'categorias/deletar/{id}',
+     'AdminCategorias@deletar');
 });
 
 

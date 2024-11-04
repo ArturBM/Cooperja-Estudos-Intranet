@@ -50,4 +50,22 @@ public function atualizar(array $dados, int $id): void
     $stmt->execute([$dados['titulo'], $dados['texto'], $dados['status']]);
 }
 
+public function deletar(int $id): void
+{
+    $query = "DELETE FROM categorias WHERE id = {$id}";
+    $stmt = Conexao::getInstancia()->prepare($query);
+    $stmt->execute();
+}
+
+public function total(?string $termo = null):int
+{
+    $termo = ($termo ? "WHERE {$termo}" : '');
+
+    $query = "SELECT * FROM categorias {$termo}";
+    $stmt = Conexao::getInstancia()->prepare($query);
+    $stmt->execute();
+
+    return $stmt->rowCount();
+}
+
 }
