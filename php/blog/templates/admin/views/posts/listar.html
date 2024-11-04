@@ -28,7 +28,9 @@
                         Inativo
                         {%endif%}
                     </td>
-                    <td></td>
+                    <td>
+                      <a href="{{url('admin/posts/editar/'~post.id)}}">Editar</a>
+                    </td>
                   </tr>
                   {%endfor%}
                 </tbody>
