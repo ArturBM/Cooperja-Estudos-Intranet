@@ -6,15 +6,18 @@ use Exception;
 class Helpers
 {
     
-    public static function redirecionar(string $url = null) :void
+    public static function redirecionar(string $url = null): void
     {
         header('HTTP/1.1 302 Found');
-
-        $local = ($url ? self::url($url) : self::url());
-
-        header("Location: http://localhost:3000/php/blog/404");
+        
+        // Usa a URL passada, ou uma URL padrão se não for fornecida
+        $local = $url ? self::url($url) : self::url(); // Assegure-se de que self::url() retorne uma URL válida
+    
+        // Redireciona para a URL calculada
+        header("Location: $local");
         exit();
     }
+    
 
 
     public static function validarCpf(string $cpf): bool

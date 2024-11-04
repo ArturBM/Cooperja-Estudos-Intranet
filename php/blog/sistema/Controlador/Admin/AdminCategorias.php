@@ -32,7 +32,7 @@ class AdminCategorias extends AdminControlador
 
         $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if(isset($dados)){
-            
+            (new CategoriaModelo())->atualizar($dados, $id);
             Helpers::redirecionar('admin/categorias/listar');
             
         }
