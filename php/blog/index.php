@@ -1,15 +1,23 @@
 <?php
 
 // Arquivo index responsável pela inicialização do sistema
+
+use sistema\Nucleo\Sessao;
+
 require './vendor/autoload.php'; 
-require './rotas.php';
+// require './rotas.php';
 
-$dados = filter_input_array(INPUT_GET, FILTER_DEFAULT);
-if(isset($dados))
-{
-    echo $dados['nome'].'<hr>';
-    echo $dados['senha'].'<hr>';
-}
+$sessao = new sistema\Nucleo\Sessao();
 
+//$sessao ->criar('nome', 'Artur Machado');
+
+var_dump($sessao->carregar());
+echo '<hr>';
+var_dump($sessao->checar('nome'));
+echo '<hr>';
+$sessao->limpar('visitas');
+// var_dump($sessao->checar('usuario'));
+echo '<hr>';
+ $sessao->deletar();
 ?>
 
