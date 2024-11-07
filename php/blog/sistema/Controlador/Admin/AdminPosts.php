@@ -13,7 +13,7 @@ class AdminPosts extends AdminControlador
     {
         $post = new PostModelo();
         echo $this->template->renderizar('posts/listar.html',[
-            'posts'=> $post->busca(),
+            'posts'=> $post->busca(null,'id ASC'),
             'total'=> [
                 'total'=> $post->total(),
                 'ativo'=>$post->total('status = 1'),
